@@ -54,7 +54,7 @@ namespace WagesApp
             //Step 3: Display the wages for the week
             Console.WriteLine($"Your regular wage is {regularWages,8:c}");
             Console.WriteLine($"Your overtime wage is {overtimeWages,8:c}");
-            Console.WriteLine($"Your wage is {totalWages,8:c}");
+            Console.WriteLine($"Your total wage is {totalWages,8:c}");
         }
     }
 }
