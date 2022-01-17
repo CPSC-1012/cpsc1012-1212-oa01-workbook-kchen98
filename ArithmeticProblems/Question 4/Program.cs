@@ -1,10 +1,9 @@
 ﻿/*  Purpose: To display the three digit number prompted from the user 
  *              and the sum of it's digits.
  *              
- *  Input: whole number
+ *  Input: three digit number
  *  
- *  Output: whole number
- *          sum of digits
+ *  Output: sum of digits of the number
  *          
  *  Algorithm: Step 1: Prompt the user for a three digit whole number.
  *             Step 2: Calculate the sum of digits using the following formula:
