@@ -20,7 +20,7 @@ namespace Problem_2
             int userAge = int.Parse(Console.ReadLine());
 
             // Use the if statement to determine the price of admission based on user age.
-            if (userAge <= 6 )
+            if (userAge <= 6)
             {
                 Console.WriteLine("Children 6 and under = FREE($0.00)");
             }
