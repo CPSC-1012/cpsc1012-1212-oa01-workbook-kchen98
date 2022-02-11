@@ -10,9 +10,9 @@ namespace Problem_1
             string dayOfWeek;
             bool validNumberOfDays = false;
             
-            Console.Write("Enter how many days you want in a month: ");
+            Console.Write("Enter how many days you want in a month (1-31): ");
             validNumberOfDays = int.TryParse(Console.ReadLine(), out numberOfDays);
-            while (!validNumberOfDays && numberOfDays > 31)
+            while (!validNumberOfDays || numberOfDays > 31)
             {
                 Console.WriteLine("Enter a valid number.\n");
                 Console.Write("Enter how many days you want in a month: ");
