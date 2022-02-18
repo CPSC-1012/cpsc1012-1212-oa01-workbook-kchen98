@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathTutor1", "MathTutor1\MathTutor1.csproj", "{FF3ECB57-0E01-43AE-BE76-FF22976C2423}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MathTutor1", "MathTutor1\MathTutor1.csproj", "{FF3ECB57-0E01-43AE-BE76-FF22976C2423}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathTutor2", "MathTutor2\MathTutor2.csproj", "{7F3A4D27-4AE5-40AB-BEC8-35BE9C48C43C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MathTutor2", "MathTutor2\MathTutor2.csproj", "{7F3A4D27-4AE5-40AB-BEC8-35BE9C48C43C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathTutor3", "MathTutor3\MathTutor3.csproj", "{89FC0ED2-8A1B-43A0-993D-A79A03832A9B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MathTutor3", "MathTutor3\MathTutor3.csproj", "{89FC0ED2-8A1B-43A0-993D-A79A03832A9B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathTutor4", "MathTutor4\MathTutor4.csproj", "{C9E5E78B-EB76-4667-8338-F9FFC45439CF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{89FC0ED2-8A1B-43A0-993D-A79A03832A9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{89FC0ED2-8A1B-43A0-993D-A79A03832A9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{89FC0ED2-8A1B-43A0-993D-A79A03832A9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9E5E78B-EB76-4667-8338-F9FFC45439CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9E5E78B-EB76-4667-8338-F9FFC45439CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9E5E78B-EB76-4667-8338-F9FFC45439CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9E5E78B-EB76-4667-8338-F9FFC45439CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
