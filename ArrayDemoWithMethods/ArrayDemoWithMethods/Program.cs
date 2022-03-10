@@ -4,13 +4,18 @@ namespace ArrayDemoWithMethods
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void DisplayMainMenu()
         {
-            // To Do: Modify the program to implement a menu-driven system where the user can:
-            // 1) Generate lotto quick picks
-            // 2) Read lotto quick picks from a file
-            // 3) Quit program
+            Console.WriteLine(@"
+*** Lotto Quick Pick System ****
+1) Generate lotto quick picks
+2) Read lotto quick picks from a file
+3) Quit program
+Your choice: ");
+        }
 
+        static void GenerateLottoQuickPicks()
+        {
             // To Do: Prompt the user for the number of quick picks
             int numberOfQuickPicks = 0;
             Console.Write("How many quick picks do you want: ");
@@ -66,6 +71,66 @@ namespace ArrayDemoWithMethods
                     // Display all the numbers generated
                     Console.Write($"Quick Pick #{counter + 1}: ");
                     DisplayNumbers(lottoNumbers);
+                }
+            }
+        }
+
+        static void ReadLottoQuicksFromFile()
+        {
+            // Ask the user for the file path
+            Console.Write("Enter the location of the data file: ");
+            string dataImportFilePath = Console.ReadLine();
+            // Read from the file path one line at a time and write the screen each line that is read
+            try
+            {
+                StreamReader reader = new StreamReader(dataImportFilePath);
+                while (reader.EndOfStream == false)
+                {
+                    // Read the current line and move the input cursor to the next line
+                    string currentLine = reader.ReadLine();
+                    // Print the current to the screen
+                    Console.WriteLine(currentLine);
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error reading from file {dataImportFilePath} with exception {ex.Message}");
+            }
+        }
+        static void Main(string[] args)
+        {
+            // To Do: Modify the program to implement a menu-driven system where the user can:
+            // 1) Generate lotto quick picks
+            // 2) Read lotto quick picks from a file
+            // 3) Quit program
+
+            int menuChoice = 0;
+            const int QuitProgramChoice = 3;
+            while (menuChoice != QuitProgramChoice)
+            {
+                DisplayMainMenu();
+                menuChoice = int.Parse(Console.ReadLine());
+                switch (menuChoice)
+                {
+                    case 1: // generate lotto quick picks
+                        {
+                            // Call method to generate lotto quick picks
+                            GenerateLottoQuickPicks();
+                        }
+                        break;
+                    case 2: // read lotto quick picks from file
+                        {
+                            // Call method to read lotto quick picks from a file
+                            ReadLottoQuicksFromFile();
+                        }
+                        break;
+                    case 3:
+                        // do nothing
+                        break;
+                    default:
+                        Console.WriteLine("Invalid menu choice. Try again.");
+                        break;
                 }
             }
         }
