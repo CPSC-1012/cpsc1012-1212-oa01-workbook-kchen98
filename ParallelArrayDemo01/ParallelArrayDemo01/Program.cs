@@ -17,12 +17,68 @@ namespace ParallelArrayDemo01
         }
 
         // TO DO 1: Add a method to sort the array by name
-        static void SortStudentName(string[] studentNames)
+        static void SortByName(string[] nameArray, double[] markArray, int studentCount)
         {
-            
+            // A bubble sort sorts the array in multiple passes.
+            // Each pass successfully swaps the neighbouring elements if the elements are not in order
+
+            /* Example      ["2,9",5,4,8,1]
+               1st pass :   [2,"5,9",4,8,1]
+                            [2,5,"4,9",8,1]
+                            [2,5,4,"8,9",1]
+                            [2,5,4,8,"1,9"]*/
+
+            /* 2nd pass :   ["2,5",4,8,1,9]
+                            [2,"4,5",8,1,9]
+                            [2,4,"5,8",1,9]
+                            [2,4,5,"1,8",9]*/
+
+            /* 3rd pass :   ["2,4",5,1,8,9]
+                            [2,"4,5",1,8,9]
+                            [2,4,"1,5",8,9]*/
+
+            /* 4th pass :   ["2,4",1,5,8,9]
+                            [2,"1,4",5,8,9]*/
+
+            // 5th pass :   [1,2,4,5,8,9]
+           
+            for (int indexK = 1; indexK < studentCount; indexK++)
+            {
+                for (int indexI = 0; indexI < studentCount - indexK; indexI++)
+                {
+                    if (nameArray[indexI].CompareTo(nameArray[indexI + 1]) > 0)
+                    {
+                        string tempName = nameArray[indexI];
+                        nameArray[indexI] = nameArray[indexI + 1];
+                        nameArray[indexI + 1] = tempName;
+
+                        double tempMark = markArray[indexI];
+                        markArray[indexI] = markArray[indexI + 1];
+                        markArray[indexI + 1] = tempMark;
+                    }
+                }
+            }
         }
         // TO DO 2: Add a method to sort the arrays by mark descending
+        static void SortByMarkDescending(string[] nameArray, double[] markArray, int studentCount)
+        {
+            for (int indexK = 1; indexK < studentCount; indexK++)
+            {
+                for (int indexI = 0; indexI < studentCount - indexK; indexI++)
+                {
+                    if (markArray[indexI] < markArray[indexI + 1])
+                    {
+                        string tempName = nameArray[indexI];
+                        nameArray[indexI] = nameArray[indexI + 1];
+                        nameArray[indexI + 1] = tempName;
 
+                        double tempMark = markArray[indexI];
+                        markArray[indexI] = markArray[indexI + 1];
+                        markArray[indexI + 1] = tempMark;
+                    }
+                }
+            }
+        }
         // TO DO 3: Add a method to find the index of the student with the highest mark (if there is a tie, return the first)
         static int IndexOfHighestMark(double[] markArray, int studentCount)
         {
@@ -90,6 +146,8 @@ namespace ParallelArrayDemo01
                     Console.WriteLine($"Enter the {studentNameArray[index]}'s mark: ");
                     studentMarkArray[index] = double.Parse(Console.ReadLine());
                 }
+                //SortByName(studentNameArray, studentMarkArray, studentCount);
+                SortByMarkDescending(studentNameArray, studentMarkArray, studentCount);
                 // Call the PrintStudentArray method
                 PrintStudentArrays(studentNameArray, studentMarkArray, studentCount);
                 
