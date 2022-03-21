@@ -5,7 +5,30 @@ namespace FileIODemo
     internal class Program
     {
         static string DataFilePath = "../../../points.txt";
+        static string OutputDataFilePath = "../../../output-file.txt";
 
+        static void WriteToFileUsingStreamWriter(string[] nameArray, int[] pointArray, int studentCount)
+        {
+            try
+            {
+                // Overwrite the file
+                StreamWriter writer = new StreamWriter(OutputDataFilePath);
+                //To append to the file instead you cause
+                //StreamWriter writer = new StreamWriter(DataFilePath, true);
+                for (int index = 0; index < studentCount; index++)
+                {
+                    writer.Write(nameArray[index]);
+                    writer.Write(',');
+                    writer.Write(pointArray[index]);
+                    writer.WriteLine();
+                }
+                writer.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error writing to file with exception {ex.Message}");
+            }
+        }
         static int ReadFromFileUsingStreamReader(string[] nameArray, int[] pointArray)
         {
             int recordCount = 0;
@@ -84,6 +107,10 @@ namespace FileIODemo
 
             //currentStudentCount = ReadFromFileUsingReadAllLines(nameArray, pointArray);
             currentStudentCount = ReadFromFileUsingStreamReader(nameArray, pointArray);
+
+            // Call the WriteToFileUsingStreamWriter method
+            WriteToFileUsingStreamWriter(nameArray, pointArray, currentStudentCount);  
+            
             DisplayStudents(nameArray, pointArray, currentStudentCount);
         }
 
