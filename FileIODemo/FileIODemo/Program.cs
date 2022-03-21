@@ -7,6 +7,17 @@ namespace FileIODemo
         static string DataFilePath = "../../../points.txt";
         static string OutputDataFilePath = "../../../output-file.txt";
 
+        static double AveragePoint(int[] pointArray, int studentCount)
+        {
+            double sum = 0;
+            double average = 0;
+            for (int index = 0; index < studentCount; index++)
+            {
+                sum += pointArray[index];
+            }
+            average = sum / studentCount;
+            return average;
+        }
         static void WriteToFileUsingStreamWriter(string[] nameArray, int[] pointArray, int studentCount)
         {
             try
@@ -110,8 +121,11 @@ namespace FileIODemo
 
             // Call the WriteToFileUsingStreamWriter method
             WriteToFileUsingStreamWriter(nameArray, pointArray, currentStudentCount);  
-            
+                 
             DisplayStudents(nameArray, pointArray, currentStudentCount);
+
+            double averagePoint = AveragePoint(pointArray, currentStudentCount);
+            Console.WriteLine($"The average points is {averagePoint:F1}");
         }
 
         static void DisplayStudents(string[] nameArray, int[] pointArray, int studentCount)
