@@ -20,7 +20,7 @@ namespace FileIODemo
                 {
                     StreamReader reader = new StreamReader(DataFilePath);
                     int index = 0;
-                    while (!reader.EndOfStream)
+                    while (!reader.EndOfStream && recordCount < nameArray.Length)
                     {
                         string currentLine = reader.ReadLine();
                         if (!string.IsNullOrWhiteSpace(currentLine))
