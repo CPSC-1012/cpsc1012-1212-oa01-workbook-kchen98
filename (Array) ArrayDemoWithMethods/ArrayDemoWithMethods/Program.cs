@@ -148,7 +148,7 @@ Your choice: ");
                 // Add the random number to the array only if it is not a duplicate
                 // Hint: You can call the IsDuplicateNumber method
                 int randomNumber = rand.Next(minValue, maxValue);
-                if (IsDuplicateNumber(randomNumber,numberArray) == false)
+                if (!IsDuplicateNumber(randomNumber,numberArray) )
                 {
                     numberArray[index] = randomNumber;
                     index++;
