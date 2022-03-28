@@ -20,7 +20,7 @@ namespace ParallelArrayDemo01
                 {
                     Console.WriteLine($"String must contain at least {minimumLength} characters");
                 }
-            }while (validLength);
+            }while (!validLength);
 
             return stringValue;
         }
